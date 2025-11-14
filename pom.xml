@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>husonlab.org</groupId>
+    <artifactId>phylosketch-ocr</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Phylosketch-OCR</name>
+
+    <description>OCR for phylosketch</description>
+
+    <url>https://github.com/husonlab/phylosketch-ocr</url>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>husonlab</id>
+            <name>Daniel Huson</name>
+            <email>daniel@husonlab.org</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/husonlab/phylosketch-ocr.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:husonlab/phylosketch-ocr.git</developerConnection>
+        <url>https://github.com/husonlab/imageprocessing</url>
+    </scm>
+
+    <modules>
+        <module>phyloksketch-ocr-api</module>
+        <module>phyloksketch-ocr-desktop</module>
+        <module>phyloksketch-ocr-ios</module>
+    </modules>
+
+</project>
