@@ -26,6 +26,7 @@ import org.bytedeco.javacpp.IntPointer;
 import org.bytedeco.tesseract.TessBaseAPI;
 import phylosketch.ocr.api.OCRService;
 import phylosketch.ocr.desktop.utils.PngEncoderFX;
+import phylosketch.ocr.desktop.utils.TessdataManager;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -124,12 +125,11 @@ public class OCRServiceDesktop implements OCRService {
 		return words;
 	}
 
-	private static TessBaseAPI createAPI() {
-		var installDir = System.getProperty("INSTALL_DIR");
-		var tessDataDir = (installDir != null && !installDir.isBlank() ? installDir + File.separator : "") + "tessdata";
+	private static TessBaseAPI createAPI() throws IOException {
+		var tessDataDir = TessdataManager.getTessdataDir();
 
 		var api = new TessBaseAPI();
-		if (api.Init(tessDataDir, "eng") != 0) {
+		if (api.Init(tessDataDir.getAbsolutePath(), "eng") != 0) {
 			api.close();
 			throw new RuntimeException("Could not initialize Tesseract.");
 		}

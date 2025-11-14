@@ -41,4 +41,9 @@ public class OCRServiceIOS implements OCRService {
 	public List<Word> getWords(Image image) {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
+
+	@Override
+	public boolean isAvailable() {
+		return false;
+	}
 }

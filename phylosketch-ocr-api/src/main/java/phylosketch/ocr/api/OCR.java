@@ -34,6 +34,11 @@ public final class OCR {
 				public List<Word> getWords(Image image) throws Exception {
 					throw new RuntimeException("No OCRService implementation found");
 				}
+
+				@Override
+				public boolean isAvailable() {
+					return false;
+				}
 			});
 
 	public static OCRService get() {
