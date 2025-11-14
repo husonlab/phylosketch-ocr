@@ -2,7 +2,7 @@
  *  PngEncoderFX.java Copyright (C) third party
  */
 
-package ocr_desktop.utils;
+package phylosketch.ocr.desktop.utils;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.PixelFormat;

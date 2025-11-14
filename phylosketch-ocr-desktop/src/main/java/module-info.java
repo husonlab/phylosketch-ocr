@@ -3,5 +3,5 @@ module phylosketch_ocr_desktop {
 	requires phylosketch_ocr_api;
 	requires org.bytedeco.tesseract;
 
-	exports ocr_desktop;
+	exports phylosketch.ocr.desktop;
 }

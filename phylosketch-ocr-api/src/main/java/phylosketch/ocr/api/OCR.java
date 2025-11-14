@@ -1,5 +1,5 @@
 /*
- *  OCRServiceIOS.java Copyright (C) 2025 Daniel H. Huson
+ *  OCR.java Copyright (C) 2025 Daniel H. Huson
  *
  *  (Some files contain contributions from other authors, who are then mentioned separately.)
  *
@@ -17,28 +17,29 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package ocr_ios;
-
+package phylosketch.ocr.api;
 
 import javafx.scene.image.Image;
-import ocr_api.OCRService;
 
 import java.util.List;
+import java.util.ServiceLoader;
 
-/**
- * interface to OCR
- * Daniel Huson, 11.2025
- */
-public class OCRServiceIOS implements OCRService {
+public final class OCR {
 
-	/**
-	 * get words in an image
-	 *
-	 * @param image the image
-	 * @return the words
-	 */
-	@Override
-	public List<Word> getWords(Image image) {
-		throw new UnsupportedOperationException("Not supported yet.");
+	private static final OCRService INSTANCE = ServiceLoader
+			.load(OCRService.class)
+			.findFirst()
+			.orElseGet(() -> new OCRService() {
+				@Override
+				public List<Word> getWords(Image image) throws Exception {
+					throw new RuntimeException("No OCRService implementation found");
+				}
+			});
+
+	public static OCRService get() {
+		return INSTANCE;
+	}
+
+	private OCR() {
 	}
 }

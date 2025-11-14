@@ -1,5 +1,5 @@
 /*
- *  OCRService.java Copyright (C) 2025 Daniel H. Huson
+ *  OCRServiceIOS.java Copyright (C) 2025 Daniel H. Huson
  *
  *  (Some files contain contributions from other authors, who are then mentioned separately.)
  *
@@ -17,10 +17,11 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package ocr_api;
+package phylosketch.ocr.ios;
 
-import javafx.geometry.Rectangle2D;
+
 import javafx.scene.image.Image;
+import phylosketch.ocr.api.OCRService;
 
 import java.util.List;
 
@@ -28,13 +29,16 @@ import java.util.List;
  * interface to OCR
  * Daniel Huson, 11.2025
  */
-public interface OCRService {
-	List<Word> getWords(Image image) throws Exception;
+public class OCRServiceIOS implements OCRService {
 
-	record Word(String text, float confidence, Rectangle2D boundingBox) {
-		public String toString() {
-			return "text=" + text + ", confidence=" + confidence + " boundingBox: x=" + boundingBox.getMinX()
-				   + " y=" + boundingBox.getMinY() + " width=" + boundingBox.getWidth() + " height=" + boundingBox.getHeight();
-		}
+	/**
+	 * get words in an image
+	 *
+	 * @param image the image
+	 * @return the words
+	 */
+	@Override
+	public List<Word> getWords(Image image) {
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 }

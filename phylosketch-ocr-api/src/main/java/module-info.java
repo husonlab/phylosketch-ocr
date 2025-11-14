@@ -1,5 +1,6 @@
 module phylosketch_ocr_api {
+	uses phylosketch.ocr.api.OCRService;
 	requires javafx.graphics;
 
-	exports ocr_api;
+	exports phylosketch.ocr.api;
 }

@@ -17,15 +17,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package ocr_desktop;
+package phylosketch.ocr.desktop;
 
 
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
-import ocr_api.OCRService;
-import ocr_desktop.utils.PngEncoderFX;
 import org.bytedeco.javacpp.IntPointer;
 import org.bytedeco.tesseract.TessBaseAPI;
+import phylosketch.ocr.api.OCRService;
+import phylosketch.ocr.desktop.utils.PngEncoderFX;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -61,6 +61,11 @@ public class OCRServiceDesktop implements OCRService {
 
 		save(image, tempFile);
 		return getWords(tempFile.toString());
+	}
+
+	@Override
+	public boolean isAvailable() {
+		return true;
 	}
 
 	private void save(Image image, File file) throws IOException {
