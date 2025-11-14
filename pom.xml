@@ -32,13 +32,13 @@
     <scm>
         <connection>scm:git:git://github.com/husonlab/phylosketch-ocr.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:husonlab/phylosketch-ocr.git</developerConnection>
-        <url>https://github.com/husonlab/imageprocessing</url>
+        <url>https://github.com/husonlab/phylosketch-ocr</url>
     </scm>
 
     <modules>
-        <module>phyloksketch-ocr-api</module>
-        <module>phyloksketch-ocr-desktop</module>
-        <module>phyloksketch-ocr-ios</module>
+        <module>phylosketch-ocr-api</module>
+        <module>phylosketch-ocr-desktop</module>
+        <module>phylosketch-ocr-ios</module>
     </modules>
 
 </project>
